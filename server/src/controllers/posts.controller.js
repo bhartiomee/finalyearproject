@@ -10,7 +10,6 @@ exports.getPosts = asyncHandler(async (req, res) => {
         console.log(err);
         return res.status(err.code).json(err);
       }
-
       return res.status(data.code).json(data);
     });
   } catch (err) {
@@ -94,6 +93,7 @@ exports.addPost = asyncHandler(async (req, res) => {
       body: req.body.body,
       userId: req.user.id,
       tagName: req.body.tagname,
+      category:req.body.category
     });
     // Save Post in the database
     await postsService.create(post, (err, data) => {

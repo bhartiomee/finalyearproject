@@ -29,13 +29,14 @@ exports.create = async (newPost, result) => {
       title: newPost.title,
       body: newPost.body,
       user_id: newPost.userId,
+      category:newPost.category
     })
       .catch((error) => {
         console.log(error);
         result(responseHandler(false, 500, 'Something went wrong', null), null);
         return null;
       });
-
+console.log(newPost)
     const mapAllTags = [];
     const mapAllTagsWithoutDesc = [];
     let mapNewTags = [];
@@ -163,6 +164,7 @@ exports.retrieveOne = async (postId, result) => {
       [Sequelize.literal('user.gravatar'), 'gravatar'],
       [Sequelize.literal('user.username'), 'username'],
       'title',
+      'category',
       ['body', 'post_body'],
       'created_at',
       'updated_at',
@@ -225,6 +227,7 @@ exports.retrieveOne = async (postId, result) => {
     'username',
     'title',
     'post_body',
+    'category',
     'created_at',
     'updated_at',
     'views',
@@ -253,6 +256,7 @@ exports.retrieveAll = async (result) => {
       'updated_at',
       'title',
       'body',
+      'category'
     ],
     include: [
       {
@@ -271,7 +275,7 @@ exports.retrieveAll = async (result) => {
     console.log(error);
     return result(responseHandler(false, 500, 'Something went wrong!', null), null);
   });
-
+  // console.log(posts)
   const postCounts = await PostsModelSequelize.findAll({
     distinct: true,
     attributes: [
@@ -305,6 +309,7 @@ exports.retrieveAll = async (result) => {
     'views',
     'title',
     'body',
+    'category',
     'tags',
     'username',
     'gravatar',
