@@ -13,11 +13,12 @@ import SearchBox from '../../components/SearchBox/SearchBox.component';
 import PageTitle from '../../components/PageTitle/PageTitle.component';
 import Pagination from "../../components/Pagination/Pagination.component";
 
-import './QuestionsPage.styles.scss';
+// import './QuestionsPage.styles.scss';
+import '../QuestionsPage/QuestionsPage.styles.scss'
 
 const itemsPerPage = 10;
 
-const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
+const QuestionsCategoryPage = ({getPosts, post: {posts, loading}}) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -43,12 +44,13 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
       <div id='mainbar' className='questions-page fc-black-800'>
         <div className='questions-grid'>
           <h3 className='questions-headline'>
-            {searchQuery ? 'Search Results' : 'All Posts'}
+            {searchQuery ? 'Search Results' : 'All Questions'}
           </h3>
           <div className='questions-btn'>
             <LinkButton
               text={'Add Post'}
-              link={'/add/question'}            />
+              link={'/add/question'}
+            />
           </div>
         </div>
         {searchQuery ? (
@@ -63,7 +65,7 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
         )}
         <div className='questions-tabs'>
           <span>
-            {new Intl.NumberFormat('en-IN').format(posts.length)} Posts
+            {new Intl.NumberFormat('en-IN').format(posts.filter(posts => posts.category==='question').length)} Questions
           </span>
           <ButtonGroup
             buttons={['Newest', 'Top', 'Views', 'Oldest']}
@@ -77,7 +79,7 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
             ?.sort(handleSorting(sortType))
             .slice((page - 1) * itemsPerPage, (page - 1) * itemsPerPage + itemsPerPage)
             .map((post, index) => (
-              <PostItem key={index} post={post} />
+              post.category==='question' && (<PostItem key={index} post={post} />)
             ))}
         </div>
         <Pagination
@@ -91,7 +93,7 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
   );
 };
 
-QuestionsPage.propTypes = {
+QuestionsCategoryPage.propTypes = {
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
 };
@@ -100,4 +102,4 @@ const mapStateToProps = (state) => ({
   post: state.post,
 });
 
-export default connect(mapStateToProps, {getPosts})(QuestionsPage);
+export default connect(mapStateToProps, {getPosts})(QuestionsCategoryPage);

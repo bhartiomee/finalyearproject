@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
+import './style.scss'
 
 const BaseButton = ({text, selected, onClick}) => {
   return (
     <Fragment>
       <button
-        className={`s-btn s-btn__filled ${
-          selected === text ? 'is-selected' : ''
+        className={`s-btn base-button ${
+          selected === text ? 'is-active' : ''
         }`}
         style={{margin: '0'}}
         onClick={onClick}

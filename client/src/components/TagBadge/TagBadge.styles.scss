@@ -2,4 +2,12 @@
   color: #242729;
   line-height: 18px;
   margin-right: 4px;
+
+  a {
+    background-color: purple;
+
+    &:hover {
+      background-color: rgba(128, 0, 128, 0.952);
+    }
+  }
 }
