@@ -13,7 +13,7 @@
       //height: 278px;
       padding-right: 16px !important;
       flex: 1 auto;
-      color: #242729;
+      color: #a73fa2;
 
       .info {
         display: flex;
@@ -22,14 +22,16 @@
         .details {
           margin-top: 4px;
           margin-bottom: 4px;
+         
 
           h2 {
             word-break: break-all !important;
-            color: #e7e8eb !important;
+            color: #a73fa2;
             font-size: 27px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+           
           }
         }
 

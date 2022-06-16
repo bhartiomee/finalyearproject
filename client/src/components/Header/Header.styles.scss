@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Blaka&family=Gentium+Plus&display=swap');
 ;
+
 .navbar {
   height: 63px;
   border-top: 3px solid hsl(303deg 34% 73%);
@@ -30,6 +31,10 @@
     color: #f2f2f3;
     text-decoration: none;
     outline: none;
+  }
+
+  &:active {
+    background-color: #833c80;
   }
 }
 
@@ -67,6 +72,17 @@
     width: 32px;
     border-radius: 3px;
     margin-right: 9px;
+  }
+
+  button {
+    background: #a73fa2;
+    border: 1px solid #e701dd;
+    color: white;
+
+    &:hover{
+      background-color: #833c80;
+      color: white;
+    }
   }
 }
 

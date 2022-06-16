@@ -5,6 +5,10 @@
   display: flex;
   border-bottom: 1px solid #4a4e51;
 
+  &:hover{
+    background-color: #363333;
+  }
+
   .stats-container {
     margin-right: 16px;
     width: 58px;
@@ -51,7 +55,7 @@
         text-decoration: none;
 
         &:hover {
-          color: #0095ff;
+          color: #db70dbe1;
         }
       }
     }
