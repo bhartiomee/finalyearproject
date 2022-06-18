@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { logout } from '../../redux/auth/auth.actions';
 
 import { ReactComponent as Search } from '../../assets/Search.svg';
-// import {ReactComponent as Logo} from '../../assets/LogoMd.svg';
+import {ReactComponent as Logo} from '../../assets/LogoMd.jpg';
 // import {ReactComponent as SmallLogo} from '../../assets/LogoGlyphMd.svg';
 import Spinner from '../Spinner/Spinner.component';
 import LinkButton from '../LinkButton/LinkButton.component';
@@ -68,8 +68,8 @@ const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
 
   const guestLinks = (
     <div className='btns'>
-      <LinkButton text={'Log in'} link={'/login'} type={'s-btn__primary'} />
-      <LinkButton text={'Sign up'} link={'/register'} type={'s-btn__filled'} />
+      <LinkButton text={'Log in'} link={'/login'} />
+      <LinkButton text={'Sign up'} link={'/register'} />
     </div>
   );
 
@@ -104,7 +104,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
         </div>
         <div className='header-brand-div'>
           <Link className='navbar-brand' to='/'>
-            <h1>UCET Community</h1>
+            <Logo className='full-logo' />
           </Link>
           {!loading && (
             <Fragment>{isAuthenticated ? authTabs : guestTabs}</Fragment>
