@@ -87,7 +87,7 @@ const AuthForm = ({register, login, action}) => {
             </div>
             <div className='grid gs4 gsy fd-column js-auth-item '>
               <button
-                className='s-btn s-btn__primary'
+                className='submit-btn'
                 id='submit-button'
                 name='submit-button'
               >
@@ -123,16 +123,6 @@ const AuthForm = ({register, login, action}) => {
         </div>
         <div className='redirects fc-black-500'>
           {action === 'Sign up' ? signUpLink : logInLink}
-          <div>
-            Are you an employer?{' '}
-            <Link
-              to='https://careers.stackoverflow.com/employer/login'
-              name='talent'
-            >
-              Sign up on Talent{' '}
-              <ExternalLink/>
-            </Link>
-          </div>
         </div>
       </div>
     </Fragment>
