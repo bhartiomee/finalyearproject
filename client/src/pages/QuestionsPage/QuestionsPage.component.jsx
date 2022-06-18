@@ -43,14 +43,12 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
       <div id='mainbar' className='questions-page fc-black-800'>
         <div className='questions-grid'>
           <h3 className='questions-headline'>
-            {searchQuery ? 'Search Results' : 'All Questions'}
+            {searchQuery ? 'Search Results' : 'All Posts'}
           </h3>
           <div className='questions-btn'>
             <LinkButton
-              text={'Ask Question'}
-              link={'/add/question'}
-              type={'s-btn__primary'}
-            />
+              text={'Add Post'}
+              link={'/add/question'}            />
           </div>
         </div>
         {searchQuery ? (
@@ -65,7 +63,7 @@ const QuestionsPage = ({getPosts, post: {posts, loading}}) => {
         )}
         <div className='questions-tabs'>
           <span>
-            {new Intl.NumberFormat('en-IN').format(posts.length)} questions
+            {new Intl.NumberFormat('en-IN').format(posts.length)} Posts
           </span>
           <ButtonGroup
             buttons={['Newest', 'Top', 'Views', 'Oldest']}

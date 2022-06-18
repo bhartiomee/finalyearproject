@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import withPageTitle from './components/withPageTitle/withPageTitle';
 
 import LayoutWrapper from './components/LayoutWrapper/LayoutWrapper.component';
@@ -14,25 +14,27 @@ import PostForm from './pages/PostForm/PostForm.component';
 import TagPage from './pages/TagPage/TagPage.component';
 import ProfilePage from './pages/ProfilePage/ProfilePage.component';
 import NotFound from './pages/NotFound/NotFound.component';
+import AllBlogsPage from './pages/AllBlogsPage/AllBlogsPage.component'
+import QuestionsCategoryPage from './pages/QuestionCategoryPage/QuestionCategoryPage.component'
 
 const HomePageComponent = withPageTitle({
-  component: LayoutWrapper({component: HomePage}),
+  component: LayoutWrapper({ component: HomePage }),
   title:
     'UCET Community',
 });
 
 const QuestionsPageComponent = withPageTitle({
-  component: LayoutWrapper({component: QuestionsPage}),
-  title: 'All Questions - UCET Community',
+  component: LayoutWrapper({ component: QuestionsPage }),
+  title: 'All Posts - UCET Community',
 });
 
 const AllTagsPageComponent = withPageTitle({
-  component: LayoutWrapper({component: AllTagsPage}),
+  component: LayoutWrapper({ component: AllTagsPage }),
   title: 'Tags - UCET Community',
 });
 
 const AllUsersPageComponent = withPageTitle({
-  component: LayoutWrapper({component: AllUsersPage}),
+  component: LayoutWrapper({ component: AllUsersPage }),
   title: 'Users - UCET Community',
 });
 
@@ -51,14 +53,24 @@ const PostFormComponent = withPageTitle({
   title: 'Ask a Question - UCET Community',
 });
 
+const QuestionsCatPage = withPageTitle({
+  component: LayoutWrapper({ component: QuestionsCategoryPage }),
+  title: 'Questions'
+})
+
+const AllBlogsCategoryPage = withPageTitle({
+  component: LayoutWrapper({ component: AllBlogsPage }),
+  title: 'Blogs'
+})
+
 const NotFoundComponent = withPageTitle({
   component: NotFound,
   title: 'Error 404',
 });
 
-const PostComponent = LayoutWrapper({component: Post});
-const ProfilePageComponent = LayoutWrapper({component: ProfilePage});
-const TagPageComponent = LayoutWrapper({component: TagPage});
+const PostComponent = LayoutWrapper({ component: Post });
+const ProfilePageComponent = LayoutWrapper({ component: ProfilePage });
+const TagPageComponent = LayoutWrapper({ component: TagPage });
 
 const RoutesTree = () => {
   return (
@@ -73,9 +85,9 @@ const RoutesTree = () => {
       <Route exact path='/users/:id' component={ProfilePageComponent} />
       <Route exact path='/tags/:tagname' component={TagPageComponent} />
       <Route exact path='/add/question' component={PostFormComponent} />
+      <Route exact path='/cat_question' component={QuestionsCatPage} />
+      <Route exact path='/cat_blog' component={AllBlogsCategoryPage} />
       <Route path='*' component={NotFoundComponent} />
-      <Route exact path='/cat_question' component={QuestionsPageComponent}></Route>
-      <Route exact path='/cat_blog' component={QuestionsPageComponent}></Route>
     </Switch>
   );
 };

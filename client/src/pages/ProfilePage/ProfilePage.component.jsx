@@ -7,8 +7,8 @@ import { getProfile } from '../../redux/users/users.actions';
 import UserSection from "./UserSection/UserSection.component";
 import PageTitle from '../../components/PageTitle/PageTitle.component';
 import Spinner from '../../components/Spinner/Spinner.component';
-import ExternalUserDetails from "./ExternalUserDetails/ExternalUserDetails.component";
-import UserActivity from "./UserActivity/UserActivity.component";
+// import ExternalUserDetails from "./ExternalUserDetails/ExternalUserDetails.component";
+// import UserActivity from "./UserActivity/UserActivity.component";
 
 import './ProfilePage.styles.scss';
 
@@ -28,20 +28,16 @@ const ProfilePage = ({getProfile, user: {user, loading}, match}) => {
           <div className='grid--cell s-navigation mb16'>
             <Link
               to='#'
-              className='s-navigation--item is-selected'
+              className='s-navigation--item profile-head'
               data-shortcut='P'
             >
               Profile
-            </Link>
-            <Link to='#' className='s-navigation--item' data-shortcut='A'>
-              Activity
             </Link>
           </div>
           <UserSection user={user}/>
         </div>
         <div className='row-grid'>
-          <ExternalUserDetails/>
-          <UserActivity/>
+          {/* <ExternalUserDetails/> */}
         </div>
       </div>
     </Fragment>

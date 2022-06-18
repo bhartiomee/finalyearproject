@@ -37,13 +37,12 @@ const TagPage = ({getTag, getTagPosts, tag, post: {posts, loading}, match}) => {
       <div id='mainbar' className='questions-page fc-black-800'>
         <div className='questions-grid'>
           <h3 className='questions-headline'>
-            Questions tagged [{tag.tag.tagname}]
+            Posts tagged [{tag.tag.tagname}]
           </h3>
           <div className='questions-btn'>
             <LinkButton
-              text={'Ask Question'}
+              text={'Add Post'}
               link={'/add/question'}
-              type={'s-btn__primary'}
             />
           </div>
         </div>

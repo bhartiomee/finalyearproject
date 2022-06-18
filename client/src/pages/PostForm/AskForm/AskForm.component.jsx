@@ -11,6 +11,7 @@ const AskForm = ({addPost}) => {
     title: '',
     body: '',
     tagname: '',
+    category:'question'
   });
 
   const markdownEditorRef = useRef(null);
@@ -27,7 +28,7 @@ const AskForm = ({addPost}) => {
       title: '',
       body: '',
       tagname: '',
-      category:''
+      category:'question'
     });
     markdownEditorRef.current.cleanEditorState();
   };

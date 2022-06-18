@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {setAlert} from '../../redux/alert/alert.actions';
 
-import Caption from './Caption/Caption.component';
+// import Caption from './Caption/Caption.component';
 import AuthForm from '../../components/AuthForm/AuthForm.component';
 import Footer from "../../components/Footer/Footer.component";
 
@@ -20,7 +20,7 @@ const Register = ({isAuthenticated}) => {
       <div className='auth-page'>
         <div className='register-content'>
           <div className='register-grid'>
-            <Caption />
+            {/* <Caption /> */}
             <AuthForm action={'Sign up'} />
           </div>
         </div>

@@ -96,7 +96,7 @@ export const login = ({username, password}) => async (dispatch) => {
 
 //LOGOUT
 export const logout = () => (dispatch) => {
-  dispatch(setAlert('User has logged out', 'success'));
+  dispatch(setAlert('Successfully logged out', 'success'));
   localStorage.removeItem('token');
 
   dispatch({type: LOGOUT});

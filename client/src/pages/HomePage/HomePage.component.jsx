@@ -28,18 +28,18 @@ const HomePage = ({getPosts, post: {posts, loading}}) => {
     <Fragment>
       <div id='mainbar' className='homepage fc-black-800'>
         <div className='questions-grid'>
-          <h3 className='questions-headline'>Top Questions</h3>
+          <h3 className='questions-headline'>Top Posts</h3>
           <div className='questions-btn'>
             <LinkButton
-              text={'Ask Question'}
+              text={'Add Post'}
               link={'/add/question'}
-              type={'s-btn__primary'}
+              // type={'s-btn__primary'}
             />
           </div>
         </div>
         <div className='questions-tabs'>
           <span>
-            {new Intl.NumberFormat('en-IN').format(posts.length)} questions
+            {new Intl.NumberFormat('en-IN').format(posts.length)} Posts
           </span>
         </div>
         <div className="questions">
